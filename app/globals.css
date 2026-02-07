@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 150 20% 92%;
+    --card: 220 40% 8%;
+    --card-foreground: 150 20% 92%;
+    --popover: 220 40% 8%;
+    --popover-foreground: 150 20% 92%;
+    --primary: 160 84% 39%;
+    --primary-foreground: 220 47% 6%;
+    --secondary: 215 28% 14%;
+    --secondary-foreground: 150 20% 85%;
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 220 47% 6%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 20% 16%;
+    --input: 215 20% 16%;
+    --ring: 160 84% 39%;
+    --chart-1: 160 84% 39%;
+    --chart-2: 200 70% 50%;
+    --chart-3: 40 90% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 0 72% 51%;
+    --radius: 0.625rem;
+    --sidebar-background: 220 45% 5%;
+    --sidebar-foreground: 150 20% 85%;
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-primary-foreground: 220 47% 6%;
+    --sidebar-accent: 215 28% 12%;
+    --sidebar-accent-foreground: 150 20% 92%;
+    --sidebar-border: 215 20% 14%;
+    --sidebar-ring: 160 84% 39%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.leaflet-container {
+  background: hsl(220 40% 8%) !important;
+  border-radius: 0.625rem;
+}
+
+.leaflet-tile-pane {
+  filter: brightness(0.7) saturate(0.8) hue-rotate(70deg);
+}
+
+.leaflet-control-zoom a {
+  background: hsl(215 28% 14%) !important;
+  color: hsl(150 20% 92%) !important;
+  border-color: hsl(215 20% 16%) !important;
+}
+
+.leaflet-control-attribution {
+  background: hsl(220 40% 8% / 0.8) !important;
+  color: hsl(215 15% 55%) !important;
+  font-size: 10px !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: hsl(220 40% 8%) !important;
+  color: hsl(150 20% 92%) !important;
+  border: 1px solid hsl(215 20% 16%) !important;
+  border-radius: 0.625rem !important;
+}
+
+.leaflet-popup-tip {
+  background: hsl(220 40% 8%) !important;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
