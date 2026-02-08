@@ -18,6 +18,8 @@ export function TopHeader() {
 
   return (
     <header className="flex h-14 shrink-0 items-center justify-between border-b border-border/50 bg-[hsl(220,45%,5%)]/80 px-6 backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-[#059669] to-transparent" />
+
       <div className="flex items-center gap-2 text-sm">
         <span className="text-slate-500">Command Center</span>
         <span className="text-slate-600">/</span>
@@ -33,15 +35,6 @@ export function TopHeader() {
           <span className="sr-only">Notifications</span>
           <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-red-500" />
         </button>
-        <div className="flex items-center gap-2">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-          </span>
-          <span className="text-xs font-medium text-slate-400">
-            AI Prediction Engine: <span className="text-emerald-400">Online</span>
-          </span>
-        </div>
       </div>
     </header>
   )

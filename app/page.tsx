@@ -34,7 +34,7 @@ export default function DashboardPage() {
     <AppShell>
       <div className="space-y-6">
         {/* Stats Row */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <StatCard
             title="Active Incidents"
             value={activeIncidents}
@@ -67,7 +67,7 @@ export default function DashboardPage() {
             icon={Activity}
             trend={{ value: "Models Online", positive: true }}
           />
-        </div>
+        </div> */}
 
         {/* Map + Risk Assessment */}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">

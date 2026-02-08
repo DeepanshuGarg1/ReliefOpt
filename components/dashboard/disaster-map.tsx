@@ -283,51 +283,51 @@ export function DisasterMap({ onDistrictSelect, selectedDistrict }: Props) {
     if (d) mapInstanceRef.current.setView([d.lat, d.lng], 8, { animate: true })
   }, [selectedDistrict])
 
-  const handleSearch = () => {
-    if (!searchQuery.trim() || !mapInstanceRef.current) return
-    const found = DISTRICTS.find((z) =>
-      z.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      z.state.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-    if (found) {
-      mapInstanceRef.current.setView([found.lat, found.lng], 8, { animate: true })
-      onDistrictSelect?.(found.district_id)
-    }
-  }
-
   // const handleSearch = () => {
-  //   if (!mapInstanceRef.current) return
-
-  //   const query = searchQuery.trim().toLowerCase()
-  //   if (!query) return
-
-  //   const found = DISTRICTS.find((d) => {
-  //     const name = d.name?.toLowerCase() || ""
-  //     const state = d.state?.toLowerCase() || ""
-  //     const id = d.district_id?.toLowerCase() || ""
-
-  //     return (
-  //       name.includes(query) ||
-  //       state.includes(query) ||
-  //       id.includes(query)
-  //     )
-  //   })
-
-  //   if (!found) {
-  //     console.warn("No district found for:", query)
-  //     return
-  //   }
-
-  //   console.log("Found district:", found.name)
-
-  //   mapInstanceRef.current.flyTo(
-  //     [found.lat, found.lng],
-  //     8,
-  //     { animate: true, duration: 1.2 }
+  //   if (!searchQuery.trim() || !mapInstanceRef.current) return
+  //   const found = DISTRICTS.find((z) =>
+  //     z.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+  //     z.state.toLowerCase().includes(searchQuery.toLowerCase())
   //   )
-
-  //   onDistrictSelect?.(found.district_id)
+  //   if (found) {
+  //     mapInstanceRef.current.setView([found.lat, found.lng], 8, { animate: true })
+  //     onDistrictSelect?.(found.district_id)
+  //   }
   // }
+
+  const handleSearch = () => {
+    if (!mapInstanceRef.current) return
+
+    const query = searchQuery.trim().toLowerCase()
+    if (!query) return
+
+    const found = DISTRICTS.find((d) => {
+      const name = d.name?.toLowerCase() || ""
+      const state = d.state?.toLowerCase() || ""
+      const id = d.district_id?.toLowerCase() || ""
+
+      return (
+        name.includes(query) ||
+        state.includes(query) ||
+        id.includes(query)
+      )
+    })
+
+    if (!found) {
+      console.warn("No district found for:", query)
+      return
+    }
+
+    console.log("Found district:", found.name)
+
+    mapInstanceRef.current.flyTo(
+      [found.lat, found.lng],
+      8,
+      { animate: true, duration: 1.2 }
+    )
+
+    onDistrictSelect?.(found.district_id)
+  }
 
 
 

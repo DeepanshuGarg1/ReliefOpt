@@ -82,7 +82,7 @@ export function AppSidebar() {
 
       {/* AI Status */}
       <div className="border-t border-border/50 px-3 py-4">
-        {!collapsed && (
+        {/* {!collapsed && (
           <div className="mb-3 rounded-lg bg-emerald-950/40 px-3 py-2.5 shadow-[inset_0_0_0_1px_hsl(160,84%,39%,0.15)]">
             <div className="flex items-center gap-2">
               <span className="relative flex h-2 w-2">
@@ -95,7 +95,7 @@ export function AppSidebar() {
             </div>
             <p className="mt-1 text-[10px] text-emerald-500/60">Online - Models Active</p>
           </div>
-        )}
+        )} */}
         <button
           type="button"
           onClick={() => setCollapsed(!collapsed)}
